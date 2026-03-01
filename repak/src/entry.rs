@@ -351,9 +351,9 @@ impl Entry {
                 };
                 use aes::cipher::BlockDecrypt;
 
-                #[cfg(not(feature = "wuthering-waves-2_4"))]
+                #[cfg(not(feature = "wuthering-waves"))]
                 let data_len = data.len();
-                #[cfg(feature = "wuthering-waves-2_4")]
+                #[cfg(feature = "wuthering-waves")]
                 let data_len = if entry_read.is_partial_encrypted() {
                     data.len().min(2048)
                 } else {
